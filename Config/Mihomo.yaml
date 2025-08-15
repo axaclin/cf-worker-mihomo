@@ -136,11 +136,7 @@ secret: "" # 控制接口密钥
 # RESTful API CORS标头配置
 external-controller-cors: # CORS 配置
   allow-origins: # 允许来源
-    - http://localhost:*
-    - http://127.0.0.1:*
-    - https://yacd.metacubex.one
-    - https://d.metacubex.one
-    - https://board.zash.run.place
+    - "*"
   allow-private-network: true # 允许私有网络访问
 #external-controller-unix: mihomo.sock  # Unix Socket 控制接口
 #external-controller-pipe: \\.\pipe\mihomo  # Windows 管道接口
@@ -231,7 +227,7 @@ tun:
   strict-route: true # 启用 auto-route 时执行严格的路由规则
   gso: true # 通用分段卸载 (GSO)，提高网络性能
   gso-max-size: 65536 # 设置 GSO 最大分段大小为 65536 字节
-  udp-timeout: 30 # 设置 UDP 超时时间为 300 秒，优化 NAT 映射
+  udp-timeout: 600 # 设置 UDP 超时时间为 600 秒，优化 NAT 映射
 #  iproute2-table-index: 2022 # 使用指定的路由表索引 (iproute2)
 #  iproute2-rule-index: 9000 # 设置路由规则的索引 (iproute2)
   endpoint-independent-nat: false # 启用独立于端点的 NAT，性能可能会略有下降，所以不建议在不需要的时候开启

@@ -151,18 +151,10 @@ tun:
   strict-route: true # 启用 auto-route 时执行严格的路由规则
   gso: true # 通用分段卸载 (GSO)，提高网络性能
   gso-max-size: 65536 # 设置 GSO 最大分段大小为 65536 字节
-  udp-timeout: 30 # 设置 UDP 超时时间为 300 秒，优化 NAT 映射
+  udp-timeout: 600 # 设置 UDP 超时时间为 300 秒，优化 NAT 映射
   # iproute2-table-index: 2022 # 使用指定的路由表索引 (iproute2)
   # iproute2-rule-index: 9000 # 设置路由规则的索引 (iproute2)
   endpoint-independent-nat: false # 启用独立于端点的 NAT，性能可能会略有下降，所以不建议在不需要的时候开启
-  route-address: # 启用 auto-route时路由自定义路由网段而不是默认路由。
-    - 0.0.0.0/1
-    - 128.0.0.0/1
-    - ::/1
-    - 8000::/1
-  route-exclude-address: # 启用 auto-route 时排除自定义网段
-    - 192.168.0.0/16
-    - fc00::/7
 
 # DNS 配置：控制 DNS 查询行为，支持增强模式和假 IP 功能
 # 查询 DNS 是否支持 H3 指令:
